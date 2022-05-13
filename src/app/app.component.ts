@@ -36,5 +36,5 @@ export class AppComponent {
    },
  ]
  studentName='datnt';
- studentMssv='PH12345'
+ studentMssv='PH13533'
 }
