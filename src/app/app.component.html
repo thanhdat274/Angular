@@ -1,5 +1,39 @@
 <div class="container">
   <div>
+    <p>Sự kiện</p>
+    <button class="btn btn-primary" (click)="onClickBtn()">
+      {{showStatus ? 'Ẩn' : 'Hiện'}} bảng dữ liệu
+    </button>
+    <div>
+      <label for="input">Sự kiện cho input</label>
+      <!-- <input type="text" id="input" (input)="onInput($event, 'sk')"> -->
+    </div>
+  </div>
+
+  <div>
+    <h3>Champ</h3>
+      <label for="name">Name</label>
+      <input type="text" id="input" (input)="onInput($event, 'name')" [value]="inputValue.name">
+      <br>
+      <label for="avatar">Avatar</label>
+      <input type="text" id="input" (input)="onInput($event, 'avatar')" [value]="inputValue.avatar">
+      <br>
+      <label for="avatar">dame</label>
+      <input type="text" id="input" (input)="onInput($event, 'dame')" [value]="inputValue.dame">
+      <br>
+      <label for="avatar">speed</label>
+      <input type="text" id="input" (input)="onInput($event, 'speed')" [value]="inputValue.speed">
+      <br>
+      <label for="avatar">defend</label>
+      <input type="text" id="input" (input)="onInput($event, 'defend')" [value]="inputValue.defend">
+      <br>
+      <label for="avatar">price</label>
+      <input type="text" id="input" (input)="onInput($event, 'price')" [value]="inputValue.price">
+      <br>
+      <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+  </div>
+
+  <div>
     Tên sinh viên: <app-name [name]="studentName"></app-name>
   </div>
   <div>
@@ -8,6 +42,7 @@
   <h1>Champions LMHT</h1>
   <!-- <app-champ></app-champ> -->
   <div>
-    <app-table [champions]="champs"></app-table>
+    <!-- <app-table [champions]="champs" class="{{showStatus ? 'db' : 'dn'}}"></app-table> -->
+    <app-table [champions]="champs" *ngIf="showStatus"></app-table>
   </div>
 </div>
