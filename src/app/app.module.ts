@@ -13,6 +13,9 @@ import { FormComponent } from './form/form.component';
 
 import { FormsModule } from '@angular/forms';
 import { ValidetComponent } from './validet/validet.component';
+import { UserComponent } from './user/user.component';
+import { ListComponent } from './user/list/list.component';
+import { UserFormComponent } from './user/form/form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ValidetComponent } from './validet/validet.component';
     DameComponent,
     TableAvatarComponent,
     FormComponent,
-    ValidetComponent
+    ValidetComponent,
+    UserComponent,
+    ListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
