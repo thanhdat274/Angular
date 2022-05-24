@@ -37,6 +37,22 @@ export class UserComponent implements OnInit {
   }
   onAddUser(newUser: any){
     console.log(newUser);
+    const newUsers= this.users
+    .map(user=>user.id)
+    .sort((a:number, b:number)=>b-a)
+
+    const maxId= newUsers[0]
+    if(newUser.id===0){
+      this.users.push({
+        ...newUser,
+        id:maxId+1
+      })
+    }else{
+      this.formValue=({
+        ...newUser,
+        id:this.formValue.id
+      })
+    }
   }
   onEdit(userId: number){
     const editUser = this.users.find(user=>user.id === userId)
