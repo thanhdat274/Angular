@@ -1,2 +1,2 @@
 <app-user-form (handleSubmit)="onAddUser($event)" [inputValues]="formValue"></app-user-form>
-<app-user-list [users]="users" (handleEdit)="onEdit($event)"></app-user-list>
+<app-user-list [users]="users" (handleEdit)="onEdit($event)" (handleDelete)="onRemove()"></app-user-list>

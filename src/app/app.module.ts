@@ -16,6 +16,13 @@ import { ValidetComponent } from './validet/validet.component';
 import { UserComponent } from './user/user.component';
 import { ListComponent } from './user/list/list.component';
 import { UserFormComponent } from './user/form/form.component';
+import { ClientComponent } from './client/client.component';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './client/home/home.component';
+import { ProductsComponent } from './client/products/products.component';
+import { AboutClientComponent } from './client/about-client/about-client.component';
+import { HeaderClientComponent } from './client/layouts/header-client/header-client.component';
+import { FooterClientComponent } from './client/layouts/footer-client/footer-client.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,14 @@ import { UserFormComponent } from './user/form/form.component';
     ValidetComponent,
     UserComponent,
     ListComponent,
-    UserFormComponent
+    UserFormComponent,
+    ClientComponent,
+    AdminComponent,
+    HomeComponent,
+    ProductsComponent,
+    AboutClientComponent,
+    HeaderClientComponent,
+    FooterClientComponent
   ],
   imports: [
     BrowserModule,

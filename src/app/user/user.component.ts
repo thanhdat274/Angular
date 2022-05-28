@@ -6,7 +6,7 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-// @Input() handleSubmit: EventEmitter<any>
+  // @Input() handleSubmit: EventEmitter<any>
   constructor() { }
 
   ngOnInit(): void {
@@ -28,36 +28,40 @@ export class UserComponent implements OnInit {
       phone: '00000'
     },
   ];
-  formValue ={
+  formValue = {
     id: 0,
     name: '',
     age: 0,
     email: '',
     phone: ''
   }
-  onAddUser(newUser: any){
+  onAddUser(newUser: any) {
     console.log(newUser);
-    const newUsers= this.users
-    .map(user=>user.id)
-    .sort((a:number, b:number)=>b-a)
 
-    const maxId= newUsers[0]
-    if(newUser.id===0){
-      this.users.push({
+    if (newUser.id === 0) {
+      const newUsers = this.users.map(user => user.id).sort((a: number, b: number) => b - a)
+      const maxId = newUsers[0]
+
+      return this.users.push({
         ...newUser,
-        id:maxId+1
-      })
-    }else{
-      this.formValue=({
-        ...newUser,
-        id:this.formValue.id
-      })
+        id: maxId + 1
+      });
+    }
+    // phần chỉnh sửa
+     return this.users.forEach((user, index)=>{
+       if(user.id === newUser.id){
+         this.users[index]=newUser;
+       }
+     })
+
+  }
+  onEdit(userId: number) {
+    const editUser = this.users.find(user => user.id === userId)
+    if (editUser) {
+      this.formValue = { ...editUser };
     }
   }
-  onEdit(userId: number){
-    const editUser = this.users.find(user=>user.id === userId)
-    if(editUser){
-      this.formValue = {...editUser};
-    }
+  onRemove(){
+
   }
 }
