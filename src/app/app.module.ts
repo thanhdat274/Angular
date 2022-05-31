@@ -23,7 +23,13 @@ import { ProductsComponent } from './client/products/products.component';
 import { AboutClientComponent } from './client/about-client/about-client.component';
 import { HeaderClientComponent } from './client/layouts/header-client/header-client.component';
 import { FooterClientComponent } from './client/layouts/footer-client/footer-client.component';
-
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { AdminProductListComponent } from './admin/admin-product/admin-product-list/admin-product-list.component';
+import { AdminProductFormComponent } from './admin/admin-product/admin-product-form/admin-product-form.component';
+import { AdminProductDetailComponent } from './admin/admin-product/admin-product-detail/admin-product-detail.component';
+import { NavAdminComponent } from './admin/nav-admin/nav-admin.component';
+import { DashboadAdminComponent } from './admin/dashboad-admin/dashboad-admin.component';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,13 +50,21 @@ import { FooterClientComponent } from './client/layouts/footer-client/footer-cli
     ProductsComponent,
     AboutClientComponent,
     HeaderClientComponent,
-    FooterClientComponent
+    FooterClientComponent,
+    AdminProductComponent,
+    AdminProductListComponent,
+    AdminProductFormComponent,
+    AdminProductDetailComponent,
+    NavAdminComponent,
+    DashboadAdminComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

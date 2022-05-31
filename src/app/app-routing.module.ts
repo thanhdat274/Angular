@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminProductDetailComponent } from './admin/admin-product/admin-product-detail/admin-product-detail.component';
+import { AdminProductFormComponent } from './admin/admin-product/admin-product-form/admin-product-form.component';
+import { AdminProductListComponent } from './admin/admin-product/admin-product-list/admin-product-list.component';
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminComponent } from './admin/admin.component';
+import { DashboadAdminComponent } from './admin/dashboad-admin/dashboad-admin.component';
 import { AboutClientComponent } from './client/about-client/about-client.component';
 import { ClientComponent } from './client/client.component';
 import { HomeComponent } from './client/home/home.component';
@@ -32,12 +37,29 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: 'users',
-        pathMatch: 'full'
+        component: DashboadAdminComponent
       },
       {
-        path: 'users',
-        component: UserComponent
+        path:'products',
+        component: AdminProductComponent,
+        children:[
+          {
+            path:'',
+            component: AdminProductListComponent
+          },
+          {
+            path:'add',
+            component: AdminProductFormComponent
+          },
+          {
+            path:'edit/:id',
+            component: AdminProductFormComponent
+          },
+          {
+            path:':id',
+            component: AdminProductDetailComponent
+          }
+        ]
       }
     ]
   }
