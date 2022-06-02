@@ -10,7 +10,7 @@ import { IdentityComponent } from './identity/identity.component';
 import { DameComponent } from './dame/dame.component';
 import { TableAvatarComponent } from './table/table-avatar/table-avatar.component';
 import { FormComponent } from './form/form.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ValidetComponent } from './validet/validet.component';
 import { UserComponent } from './user/user.component';
@@ -64,7 +64,8 @@ import {HttpClientModule} from '@angular/common/http'
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
