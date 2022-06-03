@@ -16,21 +16,24 @@
                 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                     <div class="shadow sm:rounded-md sm:overflow-hidden">
                         <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-                            <div class="col-span-6">
+                            <!-- <div class="col-span-6">
                                 <label class="block text-sm font-medium text-gray-700">Tên danh mục
                                     <span class="text-[red]">*</span>
                                 </label>
                                 <select name="" id="cateId" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md pl-[10px]">
                                     <option value="${post.id}"></option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="col-span-6">
                                 <label class="block text-sm font-medium text-gray-700">Tên sản phẩm
                                     <span class="text-[red]">*</span>
                                 </label>
-                                <input type="text" formControlName="name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
+                                <input type="text"
+                                formControlName="name"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm h-[30px] border border-gray-300 rounded-md">
+                                <app-validet [field]="productForm.get('name')" key="Tên sẩn phẩm"></app-validet>
                             </div>
-                            <div class="col-span-6">
+                            <!-- <div class="col-span-6">
                                 <label class="block text-sm font-medium text-gray-700">Giá
                                     <span class="text-[red]">*</span>
                                 </label>
@@ -97,11 +100,11 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <a routerLink="/admin/products" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Hủy</a>
-                            <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm mới</button>
+                            <button [disabled]="!productForm.valid" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm mới</button>
                         </div>
                     </div>
                 </form>

@@ -84,7 +84,7 @@
                                           <a routerLink="/admin/products/{{product._id}}" class="text-amber-500 hover:text-amber-600 mx-[10px]">
                                             <button>DETAIL</button>
                                           </a>
-                                          <a routerLink="/admin/products/${post.id}/edit" class="text-amber-500 hover:text-amber-600 mx-[10px]">EDIT</a>
+                                          <a routerLink="/admin/products/edit/{{product._id}}" class="text-amber-500 hover:text-amber-600 mx-[10px]">EDIT</a>
                                           <button (click)="onDelete(product._id)" class="btn text-red-500 hover:text-red-600 mx-[10px]">DELETE</button>
                                       </div>
                                   </td>
