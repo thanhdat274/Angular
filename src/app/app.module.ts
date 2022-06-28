@@ -29,7 +29,8 @@ import { AdminProductFormComponent } from './admin/admin-product/admin-product-f
 import { AdminProductDetailComponent } from './admin/admin-product/admin-product-detail/admin-product-detail.component';
 import { NavAdminComponent } from './admin/nav-admin/nav-admin.component';
 import { DashboadAdminComponent } from './admin/dashboad-admin/dashboad-admin.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import {HttpClientModule} from '@angular/common/http'
     AdminProductDetailComponent,
     NavAdminComponent,
     DashboadAdminComponent,
+    LoginComponent,
 
   ],
   imports: [

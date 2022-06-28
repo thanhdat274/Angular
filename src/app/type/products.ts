@@ -17,3 +17,8 @@ export type ProductAdd = {
   // img: string,
   // categoryId: number
 }
+export type ProductCart = {
+  _id: number,
+  name: string,
+ value: number
+}

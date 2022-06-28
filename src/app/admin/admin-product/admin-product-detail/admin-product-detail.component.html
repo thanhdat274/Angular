@@ -4,4 +4,8 @@
   </div>
   <div>{{product._id}}</div>
   <div>{{product.name}}</div>
+  <div>
+    <input type="number" min="1" [value]="cartValue" (input)="onChangeCartValue($event)" >
+    <button (click)="onToCart()">Add to cart</button>
+  </div>
 </div>

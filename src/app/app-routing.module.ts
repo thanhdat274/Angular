@@ -11,6 +11,8 @@ import { ClientComponent } from './client/client.component';
 import { HomeComponent } from './client/home/home.component';
 import { ProductsComponent } from './client/products/products.component';
 import { UserComponent } from './user/user.component';
+import { LoginComponent } from './auth/login/login.component';
+import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
 
 const routes: Routes = [
   {
@@ -34,6 +36,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [CanAccessAdminGuard],
     children:[
       {
         path: '',
@@ -62,11 +65,21 @@ const routes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: 'auth',
+    children:[
+      {
+        path:'signin',
+        component: LoginComponent
+      }
+    ]
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [CanAccessAdminGuard]
 })
 export class AppRoutingModule { }
